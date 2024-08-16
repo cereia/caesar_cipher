@@ -35,13 +35,3 @@ def encoder(char, shift)
     char + shift
   end
 end
-
-# test cases
-puts caesar_cipher('What a string!', 5)
-# => 'Bmfy f xywnsl!'
-
-puts caesar_cipher('Amazing day!', -5)
-# => 'Vhvudib yvt!'
-
-puts caesar_cipher('Amazing day!', 7)
-# => 'Hthgpun khf!'
