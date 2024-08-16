@@ -11,3 +11,5 @@ puts "Amazing day! - 5 => #{caesar_cipher('Amazing day!', -5)}"
 
 puts "Amazing day! + 7 => #{caesar_cipher('Amazing day!', 7)}"
 # => 'Hthgpun khf!'
+
+puts "AMAZING DAY! + 5 => #{caesar_cipher('AMAZING DAY!', 5)}"

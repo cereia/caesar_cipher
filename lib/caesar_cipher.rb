@@ -28,9 +28,9 @@ def encoder(char, shift)
   lower = char.between?(65, 90) ? 65 : 97
   upper = char.between?(65, 90) ? 90 : 122
   if char + shift < lower
-    upper + char + shift - (lower - 1)
+    upper + char + shift - lower + 1
   elsif char + shift > upper
-    lower + char + shift - (upper + 1)
+    lower + char + shift - upper - 1
   else
     char + shift
   end

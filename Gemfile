@@ -6,4 +6,4 @@ source 'https://rubygems.org'
 
 gem 'rubocop', '~> 1.64'
 
-gem "ruby-lsp", "~> 0.17.13"
+gem 'ruby-lsp', '~> 0.17.13'
