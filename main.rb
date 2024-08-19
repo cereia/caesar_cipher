@@ -16,4 +16,4 @@ puts "Amazing day! + 7 => #{cipher.caesar_cipher('Amazing day!', 7) == 'Hthgpun 
 puts "AMAZING DAY! + 5 => #{cipher.caesar_cipher('AMAZING DAY!', 5) == 'FRFENSL IFD!'}"
 # => 'FRFENSL IFD!'
 
-# puts "HAHAha oh well + 74 => #{cipher.caesar_cipher('HAHAha oh well', 26) == 'HAHAha oh well'}"
+puts "HAHAha oh well + 74 => #{cipher.caesar_cipher('HAHAha oh well', 74) == 'DWDWdw kd sahh'}"
