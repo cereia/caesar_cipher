@@ -18,7 +18,7 @@ describe CaesarCipher do
       expect(cipher.caesar_cipher('Hello World!', 32)).to eql('Nkrru Cuxrj!')
     end
 
-    xit 'works with large negative shifts' do
+    it 'works with large negative shifts' do
       expect(cipher.caesar_cipher('No punctutation here', -43)).to eql('Wx ydwlcdcjcrxw qnan')
     end
   end

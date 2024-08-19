@@ -12,30 +12,24 @@
 # everything outside of that range is punctuation and is not changed
 class CaesarCipher
   def caesar_cipher(string, shift_factor)
-    new_code_array = []
+    encoded = []
 
-    string.split('').map(&:ord).each do |code|
-      new_code_array << (code.between?(65, 90) || code.between?(97, 122) ? encoder(code, shift_factor) : code)
-      # if code.between?(65, 90) || code.between?(97, 122)
-      #   new_code_array.push(encoder(code, shift_factor))
-      # else
-      #   new_code_array.push(code)
-      # end
+    string.each_char do |char|
+      code = char.ord
+      code.between?(65, 90) || code.between?(97, 122) ? encoded.push(encoder(code, shift_factor)) : encoded.push(code)
     end
 
-    new_code_array.map(&:chr).join('')
+    encoded.map(&:chr).join('')
   end
 
-  # takes care of shifting the characters to their new ascii value
-  def encoder(char, shift)
-    lower = char.between?(65, 90) ? 65 : 97
-    upper = char.between?(65, 90) ? 90 : 122
-    if char + shift < lower
-      upper + char + shift - lower + 1
-    elsif char + shift > upper
-      lower + char + shift - upper - 1
+  # takes care of shifting the character to their new ascii code value
+  def encoder(code, shift)
+    lower_limit = code < 91 ? 65 : 97
+    if code.between?(65, 90) || code.between?(97, 122)
+      # add the remainder to the lower limit of the alphabet to get the new value
+      (((code - lower_limit) + shift) % 26) + lower_limit
     else
-      char + shift
+      code + shift
     end
   end
 end
