@@ -2,33 +2,24 @@
 
 require_relative '../lib/caesar_cipher'
 
-describe '#caesar_cipher' do
-  xit ''
-end
+describe CaesarCipher do
+  subject(:cipher) { described_class.new }
 
-describe '#encoder' do
-  # normal behavior where no wrapping is needed
-
-  # wrapping is necessary
-  context 'original number is between 65 and 90' do
-    xit 'returns a number less than 65 after shifting' do
+  describe '#caesar_cipher' do
+    it 'works with small positive shifts' do
+      expect(cipher.caesar_cipher('What a string!', 5)).to eql('Bmfy f xywnsl!')
     end
 
-    xit 'returns a number greater than 90 after shifting' do
+    it 'works with small negative shifts' do
+      expect(cipher.caesar_cipher('Amazing day!', - 5)).to eql('Vhvudib yvt!')
     end
 
-    xit 'returns a number between 65 and 90 after shifting' do
-    end
-  end
-
-  context 'original number is between 97 and 122' do
-    xit 'returns a number less than 97 after shifting' do
+    it 'works with large positive shifts' do
+      expect(cipher.caesar_cipher('Hello World!', 32)).to eql('Nkrru Cuxrj!')
     end
 
-    xit 'returns a number greater than 122 after shifting' do
-    end
-
-    xit 'returns a number between 97 and 122 after shifting' do
+    xit 'works with large negative shifts' do
+      expect(cipher.caesar_cipher('No punctutation here', -43)).to eql('Wx ydwlcdcjcrxw qnan')
     end
   end
 end
